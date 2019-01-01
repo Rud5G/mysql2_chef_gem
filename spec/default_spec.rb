@@ -5,6 +5,9 @@ describe 'mysql2_chef_gem_test::default' do
     ChefSpec::ServerRunner.new(platform: 'ubuntu', version: '16.04') do |node|
       node.default['mysql2_chef_gem']['provider'] = 'mysql'
     end.converge('mysql2_chef_gem_test::default')
+    ChefSpec::ServerRunner.new(platform: 'ubuntu', version: '18.04') do |node|
+      node.default['mysql2_chef_gem']['provider'] = 'mysql'
+    end.converge('mysql2_chef_gem_test::default')
   end
 
   context 'when using default parameters' do
